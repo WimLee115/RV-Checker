@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Privacy-first controle tool voor de jaarlijkse Rekening en Verantwoording van bewindvoerders, mentoren en curatoren." />
+    <meta name="theme-color" content="#0b5fff" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>RV-Checker</title>
+    <script>
+      // Zet lang/dir al vóór de eerste render, zodat een terugkerende Arabischtalige
+      // gebruiker geen flits van verkeerd gespiegelde layout ziet. Bewuste, kleine
+      // duplicatie van i18n/detect.ts's logica — moet synchroon vóór de eerste paint
+      // draaien, dus geen module-import hier.
+      (function () {
+        try {
+          var supported = ['nl', 'en', 'ar', 'pl'];
+          var saved = localStorage.getItem('rv-checker:locale:v1');
+          var locale = supported.indexOf(saved) !== -1 ? saved : null;
+          if (!locale) {
+            var langs = navigator.languages || [navigator.language];
+            for (var i = 0; i < langs.length; i++) {
+              var base = langs[i].slice(0, 2).toLowerCase();
+              if (supported.indexOf(base) !== -1) {
+                locale = base;
+                break;
+              }
+            }
+          }
+          locale = locale || 'nl';
+          document.documentElement.lang = locale;
+          document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
+        } catch (e) {
+          // localStorage geblokkeerd (bv. privénavigatie) — de statische lang="nl"/ltr
+          // hierboven blijft gewoon staan.
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-C-JhU0mj.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-rTeh-jsM.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

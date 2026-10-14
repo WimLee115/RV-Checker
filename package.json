@@ -1,0 +1,23 @@
+{
+  "name": "rv-checker",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "license": "AGPL-3.0-or-later",
+  "description": "Privacy-first controle tool voor de jaarlijkse Rekening en Verantwoording van bewindvoerders, mentoren en curatoren.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:standalone": "tsc && vite build --mode standalone && node scripts/rename-standalone-output.mjs",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "happy-dom": "^21.0.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vite-plugin-singlefile": "^2.3.3",
+    "vitest": "^5.0.4"
+  }
+}

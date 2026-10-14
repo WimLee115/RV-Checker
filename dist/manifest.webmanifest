@@ -1,0 +1,15 @@
+{
+  "name": "RV-Checker",
+  "short_name": "RV-Checker",
+  "description": "Privacy-first controle tool voor de jaarlijkse Rekening en Verantwoording van bewindvoerders, mentoren en curatoren.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b5fff",
+  "lang": "nl",
+  "icons": [
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
